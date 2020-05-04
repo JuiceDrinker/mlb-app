@@ -1,16 +1,14 @@
-import React, { useState } from "react";
-import { TextField, Button } from "@material-ui/core";
-function SearchBar() {
+import React from "react";
+import { TextField } from "@material-ui/core";
+function SearchBar({ setSearchQuery }) {
   return (
     <div>
-      <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-      <Button
-        onClick={(e) => {
-          console.log(e.target);
-        }}
-      >
-        Search
-      </Button>
+      <TextField
+        id="outlined-basic"
+        label="Enter a player name"
+        variant="outlined"
+        onChange={(e) => setSearchQuery(e.target.value)}
+      />
     </div>
   );
 }
