@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import { SearchContext } from "./../context/SearchContext";
 
 function IndexPage() {
-  return <div>Index</div>;
+  const { searchQuery, setSearchContext } = useContext(SearchContext);
+  return (
+    <div>
+      Index
+      {console.log("searchQuery", searchQuery)}
+    </div>
+  );
 }
 
 export default IndexPage;
