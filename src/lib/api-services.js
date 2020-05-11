@@ -15,9 +15,6 @@ class API {
     );
   };
 
-  teamsBySeason = (season, allstar_sw = "n", sort_order = "name_asc") => {
-    return this.api.get(`named.team.all_season.bam?sport_code='mlb'&all_star_sw='${allstar_sw}'&sort_order='${sort_order}'&season='${season}'`);
-  };
 }
 
 const APIservices = new API();

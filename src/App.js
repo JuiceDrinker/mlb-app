@@ -11,7 +11,7 @@ import { SearchContext } from "./context/SearchContext";
 function App() {
   return (
     <div className="App">
-      <SearchContext.Provider value={{ searchQuery: "hello" }}>
+      <SearchContext.Provider value={{ searchQuery: "" }}>
         <Appbar />
         <Switch>
           <Route path="/">
