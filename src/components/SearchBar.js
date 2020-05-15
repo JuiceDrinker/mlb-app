@@ -1,13 +1,28 @@
 import React from "react";
-import { TextField } from "@material-ui/core";
-function SearchBar({ setSearchQuery }) {
+import { TextField, makeStyles } from "@material-ui/core";
+import { useContext, useEffect } from "react";
+import SearchContextState from "../context/SearchContextState";
+import SearchContextDispatch from "../context/SearchContextDispatch";
+import { useState } from "react";
+
+function SearchBar(props) {
+  const { dispatch } = useContext(SearchContextDispatch);
+
+  const submitSearch = (e) => {
+    if (e.key === "Enter") {
+      dispatch({ type: "handleSearch", payload: search });
+    }
+  };
+  const [search, setSearch] = useState("");
   return (
     <div>
       <TextField
         id="outlined-basic"
         label="Enter a player name"
         variant="outlined"
-        onChange={(e) => setSearchQuery(e.target.value)}
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        onKeyPress={(e) => submitSearch(e)}
       />
     </div>
   );

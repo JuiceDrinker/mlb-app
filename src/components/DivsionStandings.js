@@ -19,13 +19,13 @@ function DivisionStandings() {
   return (
     <Grid container direction="row" justify="space-between">
       {divsionNames.map((divisionName, index) => (
-        <Grid item className={classes.item}>
+        <div className={classes.item}>
           <Division
             data={standingsData[divisionName]}
             divisionName={divisionName}
             key={index} //TODO: Add unique ID
           />
-        </Grid>
+        </div>
       ))}
     </Grid>
   );

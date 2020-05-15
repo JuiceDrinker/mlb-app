@@ -1,10 +1,9 @@
 import React, { useContext, useState, useEffect } from "react";
-import { SearchContext } from "./../context/SearchContext";
+import { SearchContext } from "../context/SearchContextState";
 import API from "../lib/api-services";
 import standingsData from "../data/standingsData";
 import DivisionStandings from "./DivsionStandings";
 import { makeStyles } from "@material-ui/core";
-import "./../styles/index.css";
 
 const useStyles = makeStyles({
   container: {

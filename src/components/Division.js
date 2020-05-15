@@ -25,14 +25,16 @@ function Division({ data, divisionName }) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {data.map((teamStats) => {
+            {data.map((teamStats, index) => {
               const [name, wins, losses, gamesBack] = teamStats;
               return (
                 <TableRow>
-                  <TableCell> {name} </TableCell>
-                  <TableCell> {wins} </TableCell>
-                  <TableCell> {losses} </TableCell>
-                  <TableCell>{gamesBack === null ? "-" : gamesBack} </TableCell>
+                  <TableCell key={name}> {name} </TableCell>
+                  <TableCell key={index + name}> {wins} </TableCell>
+                  <TableCell key={index + losses}> {losses} </TableCell>
+                  <TableCell key={index + gamesBack}>
+                    {gamesBack === null ? "-" : gamesBack}{" "}
+                  </TableCell>
                 </TableRow>
               );
             })}
